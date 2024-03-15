@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace EMS_WebAPISample.EmergencyModel
+{
+    public class Emergency
+    {
+        public int EmergencyId { get; set; }
+        public EntryType entryType { get; set; }
+        public int CodeTypeId { get; set; }
+        public int LocationId { get; set; }
+        public string LocationDetails { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
+        public bool isActivated { get; set; }
+    }
+
+    public class EntryType
+    {
+        public int EntryTypeId { get; set; }
+        public EntryDetails entryDetails { get; set; }
+    }
+
+    public class EntryDetails
+    {
+        public DateTime ActivationDateTime { get; set; }
+        public DateTime DeactivationDateTime { get; set; }
+        public string ReasonLateEntry { get; set; }
+        public string Remarks { get; set; }
+    }
+
+    public class CodeBlueDetails : Emergency
+    {
+        public CodeBlueVictimDetails victimDetails { get; set; }
+        public CodeBlueCheckList checkList { get; set; }
+    }
+
+    public class CodeBlueVictimDetails
+    {
+        public int VictimTypeId { get; set; }
+        public string VictimRefNo { get; set; }
+        public List<string> VictimCondition { get; set; }
+    }
+
+    public class CodeBlueCheckList
+    {
+        public bool Checklist1 { get; set; }
+        public string Checklist1Reason { get; set; }
+        public bool Checklist2 { get; set; }
+        public string Checklist2Reason { get; set; }
+        public bool Checklist3 { get; set; }
+        public string Checklist3Reason { get; set; }
+    }
+}
