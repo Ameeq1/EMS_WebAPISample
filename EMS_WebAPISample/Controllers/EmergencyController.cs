@@ -21,15 +21,31 @@ namespace EMS_WebAPISample.Controllers
 
         [HttpGet]
         [Route("GetById")]
-        public IEnumerable<Emergency> GetById()
+        public IEnumerable<Emergency> GetById(int EmergencyId)
         {
+            // Emergency obk = new Emergency();
+            //emp.entryType.EntryTypeId = (int)EntryTypeEnum.Current;
             return null;
         }
 
         [HttpPost]
         [Route("ManageEmergency")]
-        public IEnumerable<Emergency> ManageEmergency()
+        public IEnumerable<Emergency> ManageEmergency(Emergency emp)
         {
+            if (emp != null)
+            {
+                if (emp.entryType.EntryTypeId == 1)
+                {
+                    emp.entryType.entryDetails.ActivationDateTime = null;
+                    emp.entryType.entryDetails.DeactivationDateTime = null;
+                    emp.entryType.entryDetails.ReasonLateEntry = null;
+                    emp.entryType.entryDetails.Remarks = null;
+                }
+            }
+            if (emp.codeBlueDetails != null)
+            {
+
+            }
             return null;
         }
     }

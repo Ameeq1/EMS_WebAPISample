@@ -8,12 +8,19 @@ namespace EMS_WebAPISample.EmergencyModel
     public class Emergency
     {
         public int EmergencyId { get; set; }
-        public EntryType entryType { get; set; }
+        public EntryType entryType { get; set; }  // current and past
         public int CodeTypeId { get; set; }
         public int LocationId { get; set; }
         public string LocationDetails { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public CodeBlueDetails codeBlueDetails { get; set; }
+        public CodePinkDetails codePinkDetails { get; set; }
+        public CodeHazmatDetails codeHazmatDetails { get; set; }
+        public CodePurpleDetails codePurpleDetails { get; set; }
+        public CodeGreyDetails codeGreyDetails { get; set; }
+        public CodeRedDetails codeRedDetails { get; set; }
+        public CodeBlackDetails codeBlackDetails { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public bool isActivated { get; set; }
     }
 
@@ -25,13 +32,13 @@ namespace EMS_WebAPISample.EmergencyModel
 
     public class EntryDetails
     {
-        public DateTime ActivationDateTime { get; set; }
-        public DateTime DeactivationDateTime { get; set; }
+        public DateTime? ActivationDateTime { get; set; }
+        public DateTime? DeactivationDateTime { get; set; }
         public string ReasonLateEntry { get; set; }
         public string Remarks { get; set; }
     }
 
-    public class CodeBlueDetails : Emergency
+    public class CodeBlueDetails
     {
         public CodeBlueVictimDetails victimDetails { get; set; }
         public CodeBlueCheckList checkList { get; set; }
@@ -52,5 +59,34 @@ namespace EMS_WebAPISample.EmergencyModel
         public string Checklist2Reason { get; set; }
         public bool Checklist3 { get; set; }
         public string Checklist3Reason { get; set; }
+    }
+    public class CodePinkDetails
+    {
+
+    }
+
+    public class CodeHazmatDetails
+    {
+
+    }
+
+    public class CodePurpleDetails
+    {
+
+    }
+
+    public class CodeGreyDetails
+    {
+
+    }
+
+    public class CodeRedDetails
+    {
+
+    }
+
+    public class CodeBlackDetails
+    {
+
     }
 }

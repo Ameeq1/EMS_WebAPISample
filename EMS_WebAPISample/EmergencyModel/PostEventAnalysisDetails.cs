@@ -12,7 +12,7 @@ namespace EMS_WebAPISample.EmergencyModel
         public string ActionTakenByStaff { get; set; }
         public string Observation { get; set; }
         public List<QuickResponseTeam> quickResponseTeams { get; set; }
-        public BasicLifeSupport basicLifeSupport { get; set; }
+        //public BasicLifeSupport basicLifeSupport { get; set; }
         public UploadAttachments uploadAttachments { get; set; }
         public CAPA cAPA { get; set; }
         public string PostEventVerificationComment { get; set; }
@@ -24,12 +24,12 @@ namespace EMS_WebAPISample.EmergencyModel
         public int TypeOfArrestId { get; set; }  // enum
         public string TypeOfArrestDescription { get; set; }
         public int TypeOfRythmId { get; set; }  //enum
-        public decimal IsBLSInitiated { get; set; }
-        public decimal IsDefibrillatorAttached { get; set; }
-        public decimal IsACLS { get; set; }
-        public decimal IsConsciousnessRegained { get; set; }
-        public decimal IsFamilyCounseled { get; set; }
-        public DateTime PatientLastAccessed { get; set; }
+        public bool IsBLSInitiated { get; set; }
+        public bool IsDefibrillatorAttached { get; set; }
+        public bool IsACLS { get; set; }
+        public bool IsConsciousnessRegained { get; set; }
+        public bool IsFamilyCounseled { get; set; }
+        public DateTime PatientLastAccessed { get; set; }  // Time
         public decimal Temperature { get; set; }
         public decimal Pulse { get; set; }
         public decimal R { get; set; }
@@ -42,15 +42,15 @@ namespace EMS_WebAPISample.EmergencyModel
 
     public class EmergencyPostEventAnalysisFollowUp
     {
-        public decimal IsROCSAchieved { get; set; }
+        public bool IsROCSAchieved { get; set; }
         public string ROCSTransferredTo { get; set; }
         public DateTime ROCSTransferredTime { get; set; }  // Time
-        public decimal IsTTM { get; set; }
-        public decimal IsCS48Hrs { get; set; }
+        public bool IsTTM { get; set; }
+        public bool IsCS48Hrs { get; set; }
         public string TransferOutTo { get; set; }
-        public DateTime TransferOn { get; set; }
+        public DateTime TransferOn { get; set; }  // Time
         public string DischargedToHome { get; set; }
-        public decimal IsExpired { get; set; }
+        public bool IsExpired { get; set; }
 
     }
 
@@ -59,13 +59,21 @@ namespace EMS_WebAPISample.EmergencyModel
     {
         public int EmpId { get; set; }
         public string EmpName { get; set; }
-        public string Designation { get; set; }
+        public string EmpDesignation { get; set; }
     }
 
-    public class BasicLifeSupport
-    {
-
-    }
+    //public class BasicLifeSupport
+    //{
+    //    public DateTime BLSStartedOn { get; set; }
+    //    public bool IsACABFollowed { get; set; }
+    //    public string IsACABFollowed { get; set; }
+    //    public bool IsExpired { get; set; }
+    //    public bool IsCCABFollowed { get; set; }
+    //    public bool IsExpired { get; set; }
+    //    public bool IsACLSTeamOnTime { get; set; }
+    //    public bool IsExpired { get; set; }
+    //    public bool IsExpired { get; set; }
+    //}
 
     public class UploadAttachments
     {
