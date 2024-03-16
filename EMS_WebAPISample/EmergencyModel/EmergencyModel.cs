@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EMS_WebAPISample.EmergencyModel
 {
-    public class Emergency
+    public class EmergencyModel
     {
         public int EmergencyId { get; set; }
         public EntryType entryType { get; set; }  // current and past

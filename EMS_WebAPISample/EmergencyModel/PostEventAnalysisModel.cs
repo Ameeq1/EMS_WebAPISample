@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EMS_WebAPISample.EmergencyModel
 {
-    public class PostEventAnalysisDetails
+    public class PostEventAnalysisModel
     {
         public PostEventAnalysis postEventAnalysis { get; set; }
         public EmergencyPostEventAnalysisFollowUp emergencyPostEventAnalysisFollowUp { get; set; }
@@ -15,8 +15,8 @@ namespace EMS_WebAPISample.EmergencyModel
         //public BasicLifeSupport basicLifeSupport { get; set; }
         public UploadAttachments uploadAttachments { get; set; }
         public CAPA cAPA { get; set; }
-        public string PostEventVerificationComment { get; set; }
-        public ActionItem actionItem { get; set; }
+        
+        
         public string ActionVerificationComment { get; set; }
     }
     public class PostEventAnalysis
@@ -81,11 +81,6 @@ namespace EMS_WebAPISample.EmergencyModel
     }
 
     public class CAPA
-    {
-
-    }
-
-    public class ActionItem
     {
 
     }

@@ -5,5 +5,13 @@ using System.Threading.Tasks;
 
 namespace EMS_WebAPISample.EmergencyModel
 {
-    
+    public class EmergencyActionModel
+    {
+        public ActionItem actionItem { get; set; }
+    }
+
+    public class ActionItem
+    {
+
+    }
 }

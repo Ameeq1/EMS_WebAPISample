@@ -5,9 +5,16 @@ using System.Threading.Tasks;
 
 namespace EMS_WebAPISample
 {
-    public class CommonAPIResponse
+    public class CommonAPIResponse<T> where T : class
     {
-        public int StatusCode { get; set; }
-        public string StatusMessage { get; set; }
+        public T _object { get; set; }
+        public string _Message { get; set; }
+
+        public bool _Success { get; set; }
+
+        public string _ReturnToUrl { get; set; }
+
+
+        public List<string> _errorMessages = new List<string>();
     }
 }

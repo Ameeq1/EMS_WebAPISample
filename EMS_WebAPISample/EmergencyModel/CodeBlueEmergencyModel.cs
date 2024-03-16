@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace EMS_WebAPISample.EmergencyModel
 {
-    public class CodeBlueEmergencyDetails
+    public class CodeBlueEmergencyModel
     {
+        public bool CaseType { get; set; }
         public EmergencyResucitationEfforts resucEfforts { get; set; }
         public List<EmergencyTreatment> treatmentDone { get; set; }
         public List<EmergencyInterventions> interventions { get; set; }
