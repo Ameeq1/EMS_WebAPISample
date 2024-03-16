@@ -12,5 +12,9 @@ namespace EMS_WebAPISample.EmergencyModel
         public string EmpName { get; set; }
         public int EmpCode { get; set; }
         public string LocationDetails { get; set; }
+        public int ResponseCodeId { get; set; }  // enum
+        public DateTime ETA { get; set; }
+        public string ResponseNote { get; set; }
+        public bool isEmergencyActivated { get; set; }  // return always true if emergency insert or edit
     }
 }

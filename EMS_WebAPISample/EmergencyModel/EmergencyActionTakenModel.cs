@@ -5,13 +5,9 @@ using System.Threading.Tasks;
 
 namespace EMS_WebAPISample.EmergencyModel
 {
-    public class EmergencyActionModel
+    public class EmergencyActionTakenModel
     {
-        public ActionItem actionItem { get; set; }
-    }
-
-    public class ActionItem
-    {
-
+        public string ActionDescription { get; set; }
+        public string Attachment { get; set; }
     }
 }

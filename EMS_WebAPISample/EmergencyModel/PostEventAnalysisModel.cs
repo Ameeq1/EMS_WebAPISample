@@ -7,6 +7,7 @@ namespace EMS_WebAPISample.EmergencyModel
 {
     public class PostEventAnalysisModel
     {
+        public int EmergencyId { get; set; }
         public PostEventAnalysis postEventAnalysis { get; set; }
         public EmergencyPostEventAnalysisFollowUp emergencyPostEventAnalysisFollowUp { get; set; }
         public string ActionTakenByStaff { get; set; }
@@ -15,9 +16,6 @@ namespace EMS_WebAPISample.EmergencyModel
         //public BasicLifeSupport basicLifeSupport { get; set; }
         public UploadAttachments uploadAttachments { get; set; }
         public CAPA cAPA { get; set; }
-        
-        
-        public string ActionVerificationComment { get; set; }
     }
     public class PostEventAnalysis
     {

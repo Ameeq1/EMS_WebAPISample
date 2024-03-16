@@ -7,6 +7,7 @@ namespace EMS_WebAPISample.EmergencyModel
 {
     public class CodeBlueEmergencyModel
     {
+        public int EmergencyId { get; set; }
         public bool CaseType { get; set; }
         public EmergencyResucitationEfforts resucEfforts { get; set; }
         public List<EmergencyTreatment> treatmentDone { get; set; }

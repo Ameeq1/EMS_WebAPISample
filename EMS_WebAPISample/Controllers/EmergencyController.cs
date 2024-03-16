@@ -48,78 +48,173 @@ namespace EMS_WebAPISample.Controllers
         }
 
         [HttpPost]
-        [Route("ManageActiveEmergency")]
-        public EmergencyModel.EmergencyModel ManageActiveEmergency(CodeBlueEmergencyModel emp)
+        [Route("DeactivateEmergencyStatus")]
+        public async Task<IActionResult> DeactivateEmergencyStatus(int EmergencyId)
         {
+            bool isSuccess = true;
+            string InputPayload = @"{ ""emergencyId"":123""}";
+            bool result = true;  // only return true
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
+        }
 
+        [HttpPost]
+        [Route("ManageCodeBlueEmergencyStatus")]
+        public async Task<IActionResult> ManageCodeBlueEmergencyStatus(CodeBlueEmergencyModel emp)
+        {
+            bool isSuccess = true;
+            string InputPayload = "Input Payload"; // JSON of "CodeBlueEmergencyModel"
+            int result = 0;   // check only return true or not
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
+        }
+
+        [HttpGet]
+        [Route("GetCodeBlueEmergencyStatusById")]
+        public async Task<IActionResult> GetCodeBlueEmergencyStatusById(int EmergencyId)
+        {
+            bool isSuccess = true;
+            string InputPayload = @"{ ""emergencyId"":123""}";
+            CodeBlueEmergencyModel result = new CodeBlueEmergencyModel();  // return CodeBlueEmergency Model details to diplay page
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
+        }
+
+        [HttpPost]
+        [Route("ManageCodePinkEmergencyStatus")]
+        public EmergencyModel.EmergencyModel ManageCodePinkEmergencyStatus(CodeBlueEmergencyModel emp) // Change to CodePinkEmergencyModel
+        {
             return null;
         }
 
         [HttpGet]
-        [Route("GetActiveEmergencyById")]
-        public IEnumerable<EmergencyModel.EmergencyModel> GetActiveEmergencyById(int EmergencyId)
+        [Route("GetCodePinkEmergencyStatusById")]
+        public IEnumerable<EmergencyModel.EmergencyModel> GetCodePinkEmergencyStatusById(int EmergencyId)
         {
             return new List<EmergencyModel.EmergencyModel>();
         }
 
         [HttpPost]
-        [Route("EmergencyPostEventAnalysis")]
-        public EmergencyModel.EmergencyModel EmergencyPostEventAnalysis(PostEventAnalysisModel emp)
+        [Route("ManagePostEventAnalysis")]
+        public async Task<IActionResult> ManagePostEventAnalysis(PostEventAnalysisModel emp)
         {
-
-            return null;
+            bool isSuccess = true;
+            string InputPayload = "Input Payload"; // JSON of "PostEventAnalysisModel"
+            int result = 0;   // check only return true or not
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
         }
 
         [HttpGet]
         [Route("GetPostEventAnalysisById")]
-        public IEnumerable<EmergencyModel.EmergencyModel> GetPostEventAnalysisById(int EmergencyId)
+        public async Task<IActionResult> GetPostEventAnalysisById(int EmergencyId)
         {
-            return new List<EmergencyModel.EmergencyModel>();
+            bool isSuccess = true;
+            string InputPayload = @"{ ""emergencyId"":123""}";
+            PostEventAnalysisModel result = new PostEventAnalysisModel();  // return PostEventAnalysis Model details to diplay page
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
         }
 
         [HttpPost]
-        [Route("EmergencyVerification")]
-        public EmergencyModel.EmergencyModel EmergencyVerification(EmergencyVerificationModel emp)
+        [Route("ManageEmergencyVerification")]
+        public async Task<IActionResult> ManageEmergencyVerification(EmergencyVerificationModel emp)
         {
-
-            return null;
+            bool isSuccess = true;
+            string InputPayload = "Input Payload"; // JSON of "PostEventAnalysisModel"
+            int result = 0;   // check only return true or not
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
         }
 
         [HttpGet]
         [Route("GetEmergencyVerificationById")]
-        public IEnumerable<EmergencyModel.EmergencyModel> GetEmergencyVerificationById(int EmergencyId)
+        public async Task<IActionResult> GetEmergencyVerificationById(int EmergencyId)
         {
-            return new List<EmergencyModel.EmergencyModel>();
+            bool isSuccess = true;
+            string InputPayload = @"{ ""emergencyId"":123""}";
+            EmergencyVerificationModel result = new EmergencyVerificationModel();  // return EmergencyVerification Model details to diplay page
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
         }
 
         [HttpPost]
-        [Route("EmergencyAction")]
-        public EmergencyModel.EmergencyModel EmergencyActions(EmergencyActionModel emp)
+        [Route("ManageEmergencyAssignedAction")]
+        public async Task<IActionResult> ManageEmergencyAssignedAction(EmergencyActionAssignedModel emp)
         {
-
-            return null;
+            bool isSuccess = true;
+            string InputPayload = "Input Payload"; // JSON of "PostEventAnalysisModel"
+            int result = 0;   // return Employee Notification Model to send email notification
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
         }
 
         [HttpGet]
-        [Route("GetEmergencyActionById")]
-        public IEnumerable<EmergencyModel.EmergencyModel> GetEmergencyActionById(int EmergencyId)
+        [Route("GetEmergencyAssignedActionById")]
+        public async Task<IActionResult> GetEmergencyAssignedActionById(int EmergencyId)
         {
-            return new List<EmergencyModel.EmergencyModel>();
+            bool isSuccess = true;
+            string InputPayload = @"{ ""emergencyId"":123""}";
+            EmergencyActionAssignedModel result = new EmergencyActionAssignedModel();  // return EmergencyVerification Model details to diplay page
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
         }
 
         [HttpPost]
-        [Route("EmergencyActionClosure")]
-        public EmergencyModel.EmergencyModel EmergencyActionClosure(EmergencyActionClosureModel emp)
+        [Route("ManageEmergencyActionTaken")]
+        public async Task<IActionResult> ManageEmergencyActionTaken(EmergencyActionTakenModel emp)
         {
+            bool isSuccess = true;
+            string InputPayload = "Input Payload"; // JSON of "EmergencyActionTakenModel"
+            int result = 0;   // return Employee Notification Model to send email notification
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
+        }
 
-            return null;
+        [HttpGet]
+        [Route("GetEmergencyActionTakenById")]
+        public async Task<IActionResult> GetEmergencyActionTakenById(int EmergencyId)
+        {
+            bool isSuccess = true;
+            string InputPayload = @"{ ""emergencyId"":123""}";
+            EmergencyActionTakenModel result = new EmergencyActionTakenModel();  // return EmergencyVerification Model details to diplay page
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
+        }
+
+        [HttpPost]
+        [Route("ManageEmergencyActionClosure")]
+        public async Task<IActionResult> ManageEmergencyActionClosure(EmergencyActionClosureModel emp)
+        {
+            bool isSuccess = true;
+            string InputPayload = "Input Payload"; // JSON of "EmergencyActionTakenModel"
+            int result = 0;   // return true
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
         }
 
         [HttpGet]
         [Route("GetEmergencyActionClosureById")]
-        public IEnumerable<EmergencyModel.EmergencyModel> GetEmergencyActionClosureById(int EmergencyId)
+        public async Task<IActionResult> GetEmergencyActionClosureById(int EmergencyId)
         {
-            return new List<EmergencyModel.EmergencyModel>();
+            bool isSuccess = true;
+            string InputPayload = @"{ ""emergencyId"":123""}";
+            EmergencyActionClosureModel result = new EmergencyActionClosureModel();  // return EmergencyVerification Model details to diplay page
+            if (isSuccess)
+                return _ObjectResponse.Create(result, (int)HttpStatusCode.OK);
+            return _ObjectResponse.Create(null, (int)HttpStatusCode.InternalServerError, "Internal Server Error");
         }
     }
 }

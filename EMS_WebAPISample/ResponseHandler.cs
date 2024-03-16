@@ -10,7 +10,7 @@ namespace EMS_WebAPISample
     {
         public IActionResult Create(T Data, int? StatusCode, string Message = null, string ReturnToUrl = null, List<string> errorMessages = null)
         {
-            CommonAPIResponse<T> retResult = new CommonAPIResponse<T><T>();
+            CommonAPIResponse<T> retResult = new CommonAPIResponse<T>();
             retResult._object = Data;
             retResult._Message = Message;
             retResult._ReturnToUrl = ReturnToUrl;
